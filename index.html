@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arham Nadeem | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #334155;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #334155;
+            font-weight: 500;
+        }
+
+        .experience-timeline, .workflow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .exp-item, .workflow-card, .project-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+            gap: 0.5rem;
+        }
+
+        .exp-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .exp-company {
+            color: var(--accent-color);
+        }
+
+        .exp-meta {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .workflow-step {
+            margin-bottom: 1rem;
+        }
+
+        .workflow-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .workflow-step strong {
+            color: var(--accent-color);
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+        }
+
+        .tag {
+            background-color: #0284c7;
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-list strong {
+            width: 120px;
+            color: var(--text-muted);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #7dd3fc;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .exp-header {
+                flex-direction: column;
+            }
+            .exp-meta {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Arham Nadeem</h1>
+            <div class="subtitle">Student at LGS JT | AI Developer & Visual Storyteller</div>
+            <p class="bio">
+                I am a developer and creator focused on pushing the boundaries of digital media. Driven by a deep curiosity about how machine learning works under the hood, I don’t just use AI tools, I integrate them directly into my programming and cinematography pipelines. By blending technical backend engineering with advanced camera work, I use AI to concept, script, and execute complex, high-concept visual storylines that would traditionally require massive studio budgets.
+            </p>
+        </header>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">AI Pipeline Integration</div>
+                <div class="skill-card">3D Scene Reconstruction</div>
+                <div class="skill-card">Cinematography</div>
+                <div class="skill-card">Direction & Scripting</div>
+                <div class="skill-card">Post-Production & Grading</div>
+                <div class="skill-card">Frontend Web Dev</div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-timeline">
+                
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">AI Intern</div>
+                            <div class="exp-company">Tech Realm</div>
+                        </div>
+                        <div class="exp-meta">
+                            <div>June 2026 - Present</div>
+                            <div>Hybrid</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted);">
+                        Focused on AI-based 3D scene reconstruction engineering, researching neural rendering and spatial computing applications.
+                    </p>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">AI Intern</div>
+                            <div class="exp-company">66loop Technologies</div>
+                        </div>
+                        <div class="exp-meta">
+                            <div>July 2025 - August 2025</div>
+                            <div>On-Site</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted);">
+                        Successfully integrated AI capabilities into custom project management frameworks, optimizing internal architectures to automatically diagnose project bottlenecks and synthesize deep technical insights.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="workflow">
+            <h2>The Creative AI Pipeline</h2>
+            <div class="workflow-card">
+                <div class="workflow-step">
+                    <strong>1. Concept Expansion & Non-Linear Scripting</strong>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        I leverage Large Language Models to simulate complex narrative structures, break writer's block, and build world-bending concepts. AI acts as a creative sounding board to map out surreal or intricate dialogue sequences that would otherwise require multiple script doctors.
+                    </p>
+                </div>
+                <div class="workflow-step">
+                    <strong>2. Intelligent Pre-Visualization & Storyboarding</strong>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                        Before picking up the camera, I use generative AI to establish exact lighting keys, mood boards, and blocking perspectives. This bridges the gap between raw imagination and physical production, ensuring every frame captured matches a precise artistic intent.
+                    </p>
+                </div>
+                <div class="workflow-step">
+                    <strong>3. AI-Driven Post-Production</strong>
+                    <p style="color: var(--text-muted);">
+                        By using machine learning tools for mask generation, advanced object removal, and sensory pacing analysis, I drastically cut down manual technical labor in the editing room. This keeps the focus entirely on pacing, rhythm, and color science.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-title">Clinic CRM System</span>
+                    <span class="tag">Claude Code Build</span>
+                </div>
+                <p style="color: var(--text-muted);">
+                    Developed a fully functional, web-based Clinic Customer Relationship Management (CRM) system. Built efficiently using Claude Code tools, maximizing advanced AI capabilities to deploy a completely free-to-use utility for managing healthcare interactions and scheduling.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <ul class="contact-list">
+                <li><strong>WhatsApp/Sim:</strong> <a href="tel:+923454001063">+92 345 4001063</a></li>
+                <li><strong>Email:</strong> <a href="mailto:mianarhamn@gmail.com">mianarhamn@gmail.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arhamplss/" target="_blank">linkedin.com/in/arhamplss</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Arham Nadeem. Built with intent.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
