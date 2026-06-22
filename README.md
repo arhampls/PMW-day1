@@ -3,7 +3,7 @@
 A sleek, tech-focused single-page portfolio built for developers and visual storytellers. This site presents a unified professional identity bridging backend machine learning architectures with high-concept cinematography and post-production pipelines.
 
 ## Project Track
-* **PMW Track:** Full-Stack AI Integration & Media Pipeline Track
+* **PMW Track:** AI-Based 3D Scene Reconstruction
 
 ## What Was Built Today
 * **Sleek Dark Portfolio Webpage:** Crafted a modern, single-page production-ready responsive layout using custom CSS variables, explicit HTML structures, and adaptive grids.
