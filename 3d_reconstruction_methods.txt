@@ -1,0 +1,38 @@
+3D Reconstruction Methods for PreserveMy.World
+
+1. Structure-from-Motion (SfM)
+------------------------------
+- Inputs: A collection of overlapping 2D images of a site.
+- Outputs: Camera positions/orientations (poses) and a sparse 3D point cloud.
+- PreserveMy.World Fit: SfM is the foundational first step for almost all other methods (Photogrammetry, NeRF, Gaussian Splatting). It calculates exactly where every photo was taken in 3D space. 
+
+2. Multi-view Stereo (MVS)
+--------------------------
+- Inputs: Overlapping 2D images and their camera poses (usually the output from SfM).
+- Outputs: A dense 3D point cloud.
+- PreserveMy.World Fit: The second step in traditional photogrammetry. It fills in the gaps from the SfM sparse cloud to create a dense, highly detailed point representation of the historical site's geometry.
+
+3. COLMAP / Traditional Photogrammetry
+--------------------------------------
+- Inputs: Overlapping 2D images (the pipeline runs SfM, then MVS, then meshing).
+- Outputs: 3D meshes with UV texture maps (e.g., .obj, .gltf, .fbx).
+- PreserveMy.World Fit: The traditional "gold standard" for 3D archiving. It produces standard 3D models that can be 3D-printed, imported into game engines (Unreal/Unity) for VR/AR educational experiences, and easily shared with researchers. It can struggle with shiny, transparent, or extremely thin structures.
+
+4. Neural Radiance Fields (NeRF)
+--------------------------------
+- Inputs: 2D images and accurate camera poses (usually calculated by COLMAP).
+- Outputs: A trained neural network that represents a continuous volumetric scene, allowing for photorealistic "novel view synthesis" (generating new viewing angles).
+- PreserveMy.World Fit: Perfect for capturing sites with complex lighting, reflections (like water, stained glass), and intricate details (like fine vegetation) that traditional photogrammetry fails to mesh properly. Great for rendering cinematic, photorealistic fly-through videos of preserved sites. It is currently difficult to export NeRFs as standard interactive 3D meshes.
+
+5. 3D Gaussian Splatting (3DGS)
+-------------------------------
+- Inputs: 2D images, camera poses, and a sparse point cloud (all from COLMAP).
+- Outputs: A file containing millions of "3D splats" (colored, semi-transparent ellipsoids) representing the scene.
+- PreserveMy.World Fit: The modern cutting-edge approach. It offers photorealistic quality similar to NeRF but renders very efficiently in real-time. It is incredibly well-suited for web-based interactive viewers. PreserveMy.World could use this to host high-fidelity, interactive, in-browser explorations of historical sites for the general public without requiring users to download huge mesh files.
+
+6. Monocular Depth Estimation
+-----------------------------
+- Inputs: A single 2D image.
+- Outputs: A depth map (an image where pixel brightness represents the distance from the camera).
+- PreserveMy.World Fit: Crucial for historical archiving of lost, damaged, or destroyed sites. When only a single historical photograph exists, monocular AI depth models can estimate the 3D structure. This allows you to create 2.5D models, interactive parallax effects, or rough 3D reconstructions from historical archives where taking new multi-view photos is impossible.
+
